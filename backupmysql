@@ -2,7 +2,7 @@
 set -e
 
 usage() {
-	echo "Usage: $0 host [backup_file]" >&2
+	echo "Usage: $(basename $0) host [backup_file]" >&2
 	exit 1
 }
 
