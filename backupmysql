@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+usage() {
+	echo "Usage: $0 host [backup_file]" >&2
+	exit 1
+}
+
+[[ $# == 1 ]] || [[ $# == 2 ]] || usage
+
+host="$1"
+[[ $# == 2 ]] && backup_file="${2}" || backup_file="/dev/stdout"
+
+ssh_command="ssh ${host} -C"
+mysql_command="mysqldump -u root --all-databases --skip-lock-tables"
+${ssh_command} "${mysql_command}|gzip" > ${backup_file}
+
