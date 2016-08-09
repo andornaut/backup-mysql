@@ -15,7 +15,7 @@ backup_command="mysqldump -u root --all-databases --skip-lock-tables"
 ssh_command=""
 if [[ "${host}" != "localhost" ]]; then
     ssh_command="ssh ${host} -C"
-if
+fi
 
 ${ssh_command} "${backup_command}|gzip" > ${backup_file}
 

@@ -15,7 +15,7 @@ mysql_command="mysql -u root"
 ssh_command=""
 if [[ "${host}" != "localhost" ]]; then
     ssh_command="ssh ${host} -C"
-if
+fi
 
 cat ${backup_file} | ${ssh_command} "gunzip -c - | ${mysql_command}"
 
