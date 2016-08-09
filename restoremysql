@@ -11,7 +11,11 @@ usage() {
 host="$1"
 [[ $# == 2 ]] && backup_file="${2}" || backup_file="/dev/stdout"
 
-ssh_command="ssh ${host} -C"
 mysql_command="mysql -u root"
+ssh_command=""
+if [[ "${host}" != "localhost" ]]; then
+    ssh_command="ssh ${host} -C"
+if
+
 cat ${backup_file} | ${ssh_command} "gunzip -c - | ${mysql_command}"
 

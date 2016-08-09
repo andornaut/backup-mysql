@@ -11,7 +11,11 @@ usage() {
 host="$1"
 [[ $# == 2 ]] && backup_file="${2}" || backup_file="/dev/stdout"
 
-ssh_command="ssh ${host} -C"
-mysql_command="mysqldump -u root --all-databases --skip-lock-tables"
-${ssh_command} "${mysql_command}|gzip" > ${backup_file}
+backup_command="mysqldump -u root --all-databases --skip-lock-tables"
+ssh_command=""
+if [[ "${host}" != "localhost" ]]; then
+    ssh_command="ssh ${host} -C"
+if
+
+${ssh_command} "${backup_command}|gzip" > ${backup_file}
 

@@ -1,6 +1,6 @@
 # backup-remote-mysql
 
-Backup from and restore to remote MySQL or MariaDB databases.
+Backup from and restore to MySQL or MariaDB databases.
 
 ## Backup with [backupmysql](./backupmysql)
 
@@ -18,7 +18,7 @@ backupmysql host [backup_file]
 
 Argument | Required |Description
 --- | --- | ---
-host | ✓ | The remote host to connect to
+host | ✓ | The remote host to connect to. If set to "localhost", then a remote connection will not be attempted.
 backup_file | | The optional file to which to save the backup data. If not specified, then the backup data will be written to stdout
 
 ## Restore with [restoremysql](./restoremysql)
@@ -26,7 +26,7 @@ backup_file | | The optional file to which to save the backup data. If not speci
 ### Example
 
 ```
-$ ./restoremysql user@example.com backup.gz
+$ ./restoremysql localhost backup.gz
 ```
 
 ### Usage
@@ -37,6 +37,6 @@ $ ./restoremysql user@example.com backup.gz
 
 Argument | Required |Description
 --- | --- | ---
-host | ✓ | The remote host to connect to
+host | ✓ | The host to connect to. If set to "localhost", then a remote connection will not be attempted.
 backup_file | | The optional file from which to read the backup data. If not specified, then the backup data will be read from stdin
 
