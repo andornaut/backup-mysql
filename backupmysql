@@ -2,7 +2,7 @@
 set -e
 
 usage() {
-	echo "Usage: $(basename $0) host [backup_file]" >&2
+	echo "Usage: $(basename "$0") host [backup_file]" >&2
 	exit 1
 }
 
@@ -17,5 +17,5 @@ if [[ "${host}" != "localhost" ]]; then
     ssh_command="ssh ${host} -C"
 fi
 
-${ssh_command} "${backup_command}|gzip" > ${backup_file}
+${ssh_command} "${backup_command}|gzip" > "${backup_file}"
 
