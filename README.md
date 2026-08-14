@@ -1,5 +1,8 @@
 # backup-remote-mysql
 
+[![CI](https://github.com/andornaut/backup-mysql/actions/workflows/test.yml/badge.svg)](https://github.com/andornaut/backup-mysql/actions/workflows/test.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Backup from and restore to MySQL or MariaDB databases.
 
 ## Backup with [backupmysql](./backupmysql)
