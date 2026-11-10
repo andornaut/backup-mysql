@@ -42,3 +42,8 @@ Argument | Required | Description
 --- | --- | ---
 host | ✓ | The host to connect to. If set to "localhost", then a remote connection will not be attempted.
 backup_file | | The optional file from which to read the backup data. If not specified, then the backup data will be read from stdin
+
+## Development
+
+Run `make check` with Docker to check shell scripts and Markdown.
+`make check-info` lists the declared checks. No test suite or build check is declared.
