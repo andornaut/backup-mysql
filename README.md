@@ -46,4 +46,4 @@ backup_file | | The optional file from which to read the backup data. If not spe
 ## Development
 
 Run `make check` with Docker to check shell scripts and Markdown.
-`make check-info` lists the declared checks. No test suite or build check is declared.
+No test suite or build check is declared.
